@@ -7,11 +7,11 @@
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
-      background: #d51313;
+      background: #fdfdfd;
     }
 
     h2 {
-      color: #c3f709;
+      color: #333;
     }
 
     form {
@@ -29,7 +29,7 @@
       padding: 8px;
       margin-top: 5px;
       box-sizing: border-box;
-      border: 1px solid #f2f2eb;
+      border: 1px solid #ccc;
       border-radius: 4px;
     }
 
@@ -38,8 +38,8 @@
       border-collapse: separate;
       border-spacing: 0;
       width: 100%;
-      border: 4px double #545450;
-      background: #fbfbf7;
+      border: 4px double #333;
+      background: #fff;
     }
 
     th, td {
@@ -55,6 +55,25 @@
 
     .logo img {
       width: 150px;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .submit-btn input {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .submit-btn input:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
@@ -146,6 +165,12 @@
         <td><input type="text" name="bsc_result"></td>
       </tr>
     </table>
+
+    <!-- Submit Button -->
+    <div class="submit-btn">
+      <input type="submit" value="Submit">
+    </div>
+
   </form>
 
 </body>
