@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marriage Biodata</title>
   <style>
     body {
@@ -10,7 +11,7 @@
       background: #fdfdfd;
     }
 
-    h2 {
+    h2, h3 {
       color: #333;
     }
 
@@ -35,17 +36,16 @@
 
     table {
       margin-top: 20px;
-      border-collapse: separate;
-      border-spacing: 0;
+      border-collapse: collapse;
       width: 100%;
-      border: 4px double #333;
+      border: 2px solid #333;
       background: #fff;
     }
 
     th, td {
       padding: 8px;
       text-align: left;
-      border: 2px double #666;
+      border: 1px solid #666;
     }
 
     .logo {
@@ -75,67 +75,108 @@
     .submit-btn input:hover {
       background-color: #45a049;
     }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    .validation-message {
+      color: green;
+      font-size: 14px;
+      margin-top: 5px;
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      table, th, td {
+        font-size: 14px;
+      }
+      input, select, textarea {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="logo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Love_Heart_SVG.svg/1024px-Love_Heart_SVG.svg.png" alt="Matrimonial Logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Love_Heart_SVG.svg/1024px-Love_Heart_SVG.svg.png" alt="Marriage Biodata Heart Logo">
     <h2>Marriage Biodata Form</h2>
   </div>
 
-  <form>
+  <form action="/submit-biodata" method="post">
     <!-- Personal Details -->
     <h3>Personal Details</h3>
     <label for="name">My Name:</label>
-    <input type="text" id="name" name="name" required>
+    <input type="text" id="name" name="name" maxlength="100" pattern="[A-Za-z\s]+" title="Name should contain only letters and spaces" required aria-required="true">
+    <div id="name-validation" class="validation-message">✔ Valid</div>
 
     <label for="gender">Gender:</label>
-    <select id="gender" name="gender" required>
+    <select id="gender" name="gender" required aria-required="true">
       <option value="">--Select Gender--</option>
       <option value="Male">Male</option>
       <option value="Female">Female</option>
     </select>
+    <div id="gender-validation" class="validation-message">✔ Valid</div>
 
     <label for="age">My Age:</label>
-    <input type="number" id="age" name="age" min="18" required>
+    <input type="number" id="age" name="age" min="18" max="100" required aria-required="true">
+    <div id="age-validation" class="validation-message">✔ Valid</div>
 
     <label for="dob">Date of Birth:</label>
-    <input type="date" id="dob" name="dob">
+    <input type="date" id="dob" name="dob" max="2025-06-25" required aria-required="true">
+    <div id="dob-validation" class="validation-message">✔ Valid</div>
 
     <label for="zodiac">Zodiac Sign:</label>
-    <input type="text" id="zodiac" name="zodiac">
+    <input type="text" id="zodiac" name="zodiac" maxlength="20" pattern="[A-Za-z\s]+" title="Zodiac sign should contain only letters and spaces">
+    <div id="zodiac-validation" class="validation-message">✔ Valid</div>
 
     <label for="education">Education:</label>
-    <input type="text" id="education" name="education">
+    <input type="text" id="education" name="education" maxlength="100" pattern="[A-Za-z\s,.]+" title="Education should contain letters, spaces, or basic punctuation">
+    <div id="education-validation" class="validation-message">✔ Valid</div>
 
     <label for="occupation">Occupation:</label>
-    <input type="text" id="occupation" name="occupation">
+    <input type="text" id="occupation" name="occupation" maxlength="100" pattern="[A-Za-z\s,.]+" title="Occupation should contain letters, spaces, or basic punctuation">
+    <div id="occupation-validation" class="validation-message">✔ Valid</div>
 
     <!-- Family Details -->
     <h3>Family Details</h3>
     <label for="fatherName">Father's Name:</label>
-    <input type="text" id="fatherName" name="fatherName">
+    <input type="text" id="fatherName" name="fatherName" maxlength="100" pattern="[A-Za-z\s]+" title="Name should contain only letters and spaces">
+    <div id="fatherName-validation" class="validation-message">✔ Valid</div>
 
     <label for="fatherJob">Father's Occupation:</label>
-    <input type="text" id="fatherJob" name="fatherJob">
+    <input type="text" id="fatherJob" name="fatherJob" maxlength="100" pattern="[A-Za-z\s,.]+" title="Occupation should contain letters, spaces, or basic punctuation">
+    <div id="fatherJob-validation" class="validation-message">✔ Valid</div>
 
     <label for="motherName">Mother's Name:</label>
-    <input type="text" id="motherName" name="motherName">
+    <input type="text" id="motherName" name="motherName" maxlength="100" pattern="[A-Za-z\s]+" title="Name should contain only letters and spaces">
+    <div id="motherName-validation" class="validation-message">✔ Valid</div>
 
     <label for="motherJob">Mother's Occupation:</label>
-    <input type="text" id="motherJob" name="motherJob">
+    <input type="text" id="motherJob" name="motherJob" maxlength="100" pattern="[A-Za-z\s,.]+" title="Occupation should contain letters, spaces, or basic punctuation">
+    <div id="motherJob-validation" class="validation-message">✔ Valid</div>
 
     <label for="siblings">Number of Siblings:</label>
-    <input type="number" id="siblings" name="siblings">
+    <input type="number" id="siblings" name="siblings" min="0" max="20">
+    <div id="siblings-validation" class="validation-message">✔ Valid</div>
 
     <!-- Contact Details -->
     <h3>Contact Details</h3>
     <label for="contact">Contact No:</label>
-    <input type="tel" id="contact" name="contact">
+    <input type="tel" id="contact" name="contact" pattern="\+?[0-9]{10,15}" title="Enter a valid phone number (10-15 digits)" maxlength="15">
+    <div id="contact-validation" class="validation-message">✔ Valid</div>
 
     <label for="address">Address:</label>
-    <textarea id="address" name="address" rows="4"></textarea>
+    <textarea id="address" name="address" rows="4" maxlength="500" pattern="[A-Za-z0-9\s,.\-/#]+" title="Address should contain letters, numbers, spaces, or basic punctuation"></textarea>
+    <div id="address-validation" class="validation-message">✔ Valid</div>
 
     <!-- Educational Qualifications Table -->
     <h3>Educational Qualifications</h3>
@@ -148,21 +189,57 @@
       </tr>
       <tr>
         <td>SSC</td>
-        <td><input type="text" name="ssc_institution"></td>
-        <td><input type="text" name="ssc_year"></td>
-        <td><input type="text" name="ssc_result"></td>
+        <td>
+          <label for="ssc_institution" class="sr-only">SSC Institution</label>
+          <input type="text" id="ssc_institution" name="ssc_institution" maxlength="100" pattern="[A-Za-z\s,.]+" title="Institution should contain letters, spaces, or basic punctuation">
+          <div id="ssc_institution-validation" class="validation-message">✔ Valid</div>
+        </td>
+        <td>
+          <label for="ssc_year" class="sr-only">SSC Passing Year</label>
+          <input type="number" id="ssc_year" name="ssc_year" min="1900" max="2025" title="Enter a valid year (1900–2025)">
+          <div id="ssc_year-validation" class="validation-message">✔ Valid</div>
+        </td>
+        <td>
+          <label for="ssc_result" class="sr-only">SSC GPA/CGPA</label>
+          <input type="number" id="ssc_result" name="ssc_result" step="0.01" min="0" max="5" title="Enter a valid GPA/CGPA (0–5)">
+          <div id="ssc_result-validation" class="validation-message">✔ Valid</div>
+        </td>
       </tr>
       <tr>
         <td>HSC</td>
-        <td><input type="text" name="hsc_institution"></td>
-        <td><input type="text" name="hsc_year"></td>
-        <td><input type="text" name="hsc_result"></td>
+        <td>
+          <label for="hsc_institution" class="sr-only">HSC Institution</label>
+          <input type="text" id="hsc_institution" name="hsc_institution" maxlength="100" pattern="[A-Za-z\s,.]+" title="Institution should contain letters, spaces, or basic punctuation">
+          <div id="hsc_institution-validation" class="validation-message">✔ Valid</div>
+        </td>
+        <td>
+          <label for="hsc_year" class="sr-only">HSC Passing Year</label>
+          <input type="number" id="hsc_year" name="hsc_year" min="1900" max="2025" title="Enter a valid year (1900–2025)">
+          <div id="hsc_year-validation" class="validation-message">✔ Valid</div>
+        </td>
+        <td>
+          <label for="hsc_result" class="sr-only">HSC GPA/CGPA</label>
+          <input type="number" id="hsc_result" name="hsc_result" step="0.01" min="0" max="5" title="Enter a valid GPA/CGPA (0–5)">
+          <div id="hsc_result-validation" class="validation-message">✔ Valid</div>
+        </td>
       </tr>
       <tr>
         <td>BSc in Computer Science</td>
-        <td><input type="text" name="bsc_institution"></td>
-        <td><input type="text" name="bsc_year"></td>
-        <td><input type="text" name="bsc_result"></td>
+        <td>
+          <label for="bsc_institution" class="sr-only">BSc Institution</label>
+          <input type="text" id="bsc_institution" name="bsc_institution" maxlength="100" pattern="[A-Za-z\s,.]+" title="Institution should contain letters, spaces, or basic punctuation">
+          <div id="bsc_institution-validation" class="validation-message">✔ Valid</div>
+        </td>
+        <td>
+          <label for="bsc_year" class="sr-only">BSc Passing Year</label>
+          <input type="number" id="bsc_year" name="bsc_year" min="1900" max="2025" title="Enter a valid year (1900–2025)">
+          <div id="bsc_year-validation" class="validation-message">✔ Valid</div>
+        </td>
+        <td>
+          <label for="bsc_result" class="sr-only">BSc GPA/CGPA</label>
+          <input type="number" id="bsc_result" name="bsc_result" step="0.01" min="0" max="5" title="Enter a valid GPA/CGPA (0–5)">
+          <div id="bsc_result-validation" class="validation-message">✔ Valid</div>
+        </td>
       </tr>
     </table>
 
@@ -170,8 +247,20 @@
     <div class="submit-btn">
       <input type="submit" value="Submit">
     </div>
-
   </form>
+
+  <script>
+    // Real-time validation feedback
+    const inputs = document.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('input', () => {
+        const validationMessage = document.getElementById(`${input.id}-validation`);
+        if (validationMessage) {
+          validationMessage.style.display = input.checkValidity() && input.value !== '' ? 'block' : 'none';
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
