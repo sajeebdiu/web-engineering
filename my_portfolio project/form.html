@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cross-Border Seller Center Registration</title>
+  <link rel="stylesheet" href="css/form.css" />
+  <script src="valid.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <div class="logo-text">
+      </div>
+    </div>
+    <div class="top-right">
+      <div class="language-select">English ▼</div>
+      <button class="sign-in-btn">Sign in</button>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="page-title">Welcome to the Cross-Border Seller Center</h2>
+
+    <form id="registrationForm" class="registration-form" novalidate>
+      <h3>Fill in the registration information</h3>
+
+      <label for="countryRegion" class="required">
+        Country/Region of Company Registration
+        <small>Once registered, the country/region cannot be changed. Please choose carefully.</small>
+      </label>
+      <select id="countryRegion" name="countryRegion" required>
+        <option value="mainlandChina" selected>Mainland China</option>
+      </select>
+
+      <label for="email" class="required">Please enter your email</label>
+      <input id="email" type="email" name="email" placeholder="Please enter your email" required />
+
+      <div class="verification-group">
+        <input id="emailCode" type="text" name="emailCode" placeholder="Please enter email verification code" required />
+        <button type="button" id="sendEmailCode">Send</button>
+      </div>
+
+      <label for="password" class="required">
+        Set up an account password
+        <small>The password needs to be a combination of 6-20 digits, letters, and special symbols.</small>
+      </label>
+
+      <div class="password-group">
+        <input id="password" type="password" name="password" placeholder="Please enter password." required />
+        <button type="button" class="toggle-password" data-target="password" aria-label="Toggle password visibility"></button>
+      </div>
+
+      <div class="password-group">
+        <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Please enter password again." required />
+        <button type="button" class="toggle-password" data-target="confirmPassword" aria-label="Toggle password visibility"></button>
+      </div>
+
+      <label for="phone" class="required">Bind Phone Number</label>
+
+      <div class="phone-input-group">
+        <input id="phoneCode" name="phoneCode" type="text" value="86" readonly />
+        <input id="phone" name="phone" type="tel" placeholder="Please enter your mobile number" required />
+      </div>
+
+      <div class="verification-group">
+        <input id="smsCode" name="smsCode" type="text" placeholder="Please enter the SMS verification code." required />
+        <button type="button" id="sendSmsCode">Send</button>
+      </div>
+
+      <div class="checkbox-group">
+        <input id="agreement1" name="agreement1" type="checkbox" required />
+        <label for="agreement1">
+          I have read and agree to the
+          <a href="#" target="_blank">Cross-border Merchants Unified Workbench Service Agreement</a>
+        </label>
+      </div>
+
+      <div class="checkbox-group">
+        <input id="agreement2" name="agreement2" type="checkbox" required />
+        <label for="agreement2">
+          I have read and agree to the
+          <a href="#" target="_blank">Consent Letter for Cross-border Transmission of Personal Information by Alibaba</a>
+        </label>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </main>
+<script src="valid.js"></script>
+</body>
+</html>

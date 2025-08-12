@@ -1,0 +1,156 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(238, 102, 48);
+}
+
+#header{
+    border: 1px solid black;
+    height: 5rem;
+    background-color: rgb(238, 94, 51);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hbox>div{
+    border: 1px solid rgba(146, 39, 13, 0.959);
+    margin-left: 5rem;
+    margin-right: 5rem;
+
+}
+
+.hb1{
+    height: 4vh;
+}
+
+.hb1 a{
+    text-decoration: none;
+    color: rgba(245, 61, 14, 0.945);
+    font-size: 0.8rem;
+    padding-right: 1rem;
+}
+
+.hb2{
+    height: 9vh;
+    display: flex;
+}
+
+.hb2 div{
+    height: 9vh;
+    /* border: 1px solid purple; */
+    margin-right: 1rem;
+}
+
+.clogo>img{
+    height: 3rem;
+    width: 7rem;
+}
+
+.srcbar>form>input{
+    height: 2rem;
+    margin-top: .6rem;
+    border-radius: 10px;
+    width: 35rem;
+    padding-left: 1rem;
+    border-style: none;
+}
+
+#contain{
+    border: 1px solid black;
+    height: 77vh;
+}
+
+.ly-1{
+    border: 1px solid rgb(109, 3, 230);
+    height: 20rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    display: flex;
+    margin-top: 0.6rem;
+}
+
+.lely{
+    /* border: 1px solid black; */
+    height: 100%;
+    width: 20%;
+    column-gap: 1rem;
+    background-color: rgb(226, 66, 26);
+    border-radius: 1rem;
+}
+
+#menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#menu li a img{
+    height: 0.8rem;
+    width: 0.8rem;
+    margin-top: 1rem ;
+}
+
+#menu li{
+     font-size: 0.8rem;
+     height: 2rem;
+     align-self: left;
+     margin-top: 0.1rem;
+}
+
+.first{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    background-color: orangered;
+}
+
+.rily{
+    border: 1px solid black;
+    height: 100%;
+    width: 80%;
+    column-gap: 1rem;
+}
+
+#menu {
+    display: flex;
+    list-style: none;
+}
+
+#menu li a{
+    text-decoration: none;
+    padding: 10px;
+    color: #ec4e27f5;
+    cursor: pointer;
+}
+
+  #menu li:hover {
+    background-color: #2980b9;
+  }
+
+  /* Button styles */
+  #addMenuItem {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  #addMenuItem:hover {
+    background-color: #2980b9;
+  }
+
+
+#footer{
+    border: 1px solid black;
+    height: 10vh;
+}
